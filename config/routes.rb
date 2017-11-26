@@ -7,4 +7,9 @@ Rails.application.routes.draw do
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/404' => 'errors#not_found'
+  get '/500' => 'errors#exception'
+  post '/500' => 'errors#exception'
+  get '/400' => 'errors#exception'
+  post '/400' => 'errors#exception'
 end

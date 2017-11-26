@@ -18,6 +18,8 @@ Bundler.require(*Rails.groups)
 
 module Rails5Rspec3
   class Application < Rails::Application
+    config.exceptions_app = self.routes
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 

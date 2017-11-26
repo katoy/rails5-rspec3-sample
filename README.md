@@ -21,6 +21,14 @@ $ curl http://localhost:3000/api/v1/expenses -w '\n'
 $ curl http://localhost:3000/api/v1/expenses/2018-11-10 -w '\n'
 {"expenses":[{"id":1,"payee":"Youichi Kato","amount":"10.23","title":"Amazon.com","day_at":"2018-11-10"},{"id":2,"payee":"Youichi Kato","amount":"10.23","title":"Amazon.com","day_at":"2018-11-10"}]}
 
-$ curl -X POST  http://localhost:3000/api/v1/expenses -d 'expense[payee]=Dr.x&expense[amount]=5&expense[title]=Books&expense[day_at]=2018-12-01'  -w '\n'
+$ curl -X POST  http://localhost:3000/api/v1/expenses -d 'expense[payee]=Dr.x&expense[amount]=5&expense[title]=Books&expense[day_at]=2018-12-01' -w '\n'
 {"expenses":{"id":12,"payee":"Dr.x","amount":"5.0","title":"Books","day_at":"2018-12-01"}}
 ```
+
+```
+$ curl http://localhost:3000/api/v1/zzz -w '\n'
+{"error":"not-found"}
+```
+
+- See エラー処理の追加
+  https://stackoverflow.com/questions/10253366/need-to-return-json-formatted-404-error-in-rails
