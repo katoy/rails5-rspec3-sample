@@ -32,6 +32,9 @@ group :development, :test do
   gem 'pry-doc'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'bullet'
+  gem 'rubocop', require: false
+  gem 'brakeman', :require => false
 end
 
 group :development do
@@ -39,6 +42,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'license_finder'
+  gem 'annotate'
+  gem 'rails-erd'
+  gem 'metric_fu'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

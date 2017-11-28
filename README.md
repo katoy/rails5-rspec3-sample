@@ -32,3 +32,10 @@ $ curl http://localhost:3000/api/v1/zzz -w '\n'
 
 - See エラー処理の追加
   https://stackoverflow.com/questions/10253366/need-to-return-json-formatted-404-error-in-rails
+
+
+- その他の参考
+　https://techracho.bpsinc.jp/hachi8833/2017_07_12/42497  
+　Ruby on Railsで使ってうれしい19のgem  
+- https://techracho.bpsinc.jp/hachi8833/2017_02_16/32827
+　[Rails 5] rails newで常に使いたい厳選・定番gemリスト（2017年版）  
