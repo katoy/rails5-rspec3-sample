@@ -26,4 +26,4 @@ data = [
     day_at: Time.zone.parse('2018-11-12')
   }
 ]
-expenses = Expense.create(data)
+Expense.create(data)

@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Api::V1::ExpensesController, type: :routing do
   describe 'routing' do
-
     it 'routes to #index' do
       expect(get: '/api/v1/expenses').to route_to('api/v1/expenses#index', format: 'json')
     end

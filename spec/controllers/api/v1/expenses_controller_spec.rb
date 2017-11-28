@@ -27,22 +27,22 @@ RSpec.describe Api::V1::ExpensesController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Expense. As you add validations to Expense, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
+  let(:valid_attributes) do
     {
       'payee' => 'kato',
       'amount' => 10.12,
       'title' => 'camera',
       'day_at' => '2017-11-01'
     }
-  }
+  end
 
-  let(:invalid_attributes) {
+  let(:invalid_attributes) do
     {
       'amount' => 10.12,
       'title' => 'camera',
       'day_at' => '2017-11-01'
     }
-  }
+  end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -51,7 +51,7 @@ RSpec.describe Api::V1::ExpensesController, type: :controller do
 
   describe 'GET #index' do
     it 'returns a success response' do
-      expense = Expense.create! valid_attributes
+      Expense.create! valid_attributes
       get :index, session: valid_session
       expect(response).to be_success
       expect(response.content_type).to eq('application/json')
@@ -62,7 +62,7 @@ RSpec.describe Api::V1::ExpensesController, type: :controller do
     it 'returns a success response' do
       expense = Expense.create! valid_attributes
       date = expense.day_at.strftime('%Y-%m-%d')
-      get :show, params: {date: date }, session: valid_session
+      get :show, params: { date: date }, session: valid_session
       expect(response).to be_success
       expect(response.content_type).to eq('application/json')
     end
@@ -84,7 +84,7 @@ RSpec.describe Api::V1::ExpensesController, type: :controller do
     end
 
     context 'with invalid params' do
-      it "renders a JSON response with errors for the new expense" do
+      it 'renders a JSON response with errors for the new expense' do
         post :create, params: { expense: invalid_attributes }, session: valid_session
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to eq('application/json')

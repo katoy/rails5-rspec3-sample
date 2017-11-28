@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
@@ -27,25 +26,25 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'pry-rails'
+  gem 'brakeman', require: false
+  gem 'bullet'
+  gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'pry-doc'
+  gem 'pry-rails'
   gem 'rspec-rails'
-  gem 'factory_bot_rails'
-  gem 'bullet'
   gem 'rubocop', require: false
-  gem 'brakeman', :require => false
 end
 
 group :development do
+  gem 'annotate'
+  gem 'license_finder'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'metric_fu'
+  gem 'rails-erd'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'license_finder'
-  gem 'annotate'
-  gem 'rails-erd'
-  gem 'metric_fu'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

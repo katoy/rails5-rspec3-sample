@@ -41,13 +41,14 @@ class ExpensesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_expense
-      @expense = Expense.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def expense_params
-      params.require(:expense).permit(:payee, :amount, :day_at, :title)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_expense
+    @expense = Expense.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def expense_params
+    params.require(:expense).permit(:payee, :amount, :day_at, :title)
+  end
 end
